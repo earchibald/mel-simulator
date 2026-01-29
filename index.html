@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An immersive, interactive web experience bringing to life the legendary tale of Mel Kaye, a Real Programmer who wrote machine code in raw hexadecimal on drum memory computers in the 1960s.">
     <title>The Story of Mel - A Real Programmer</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -92,7 +93,7 @@
         <div class="container">
             <h2 class="section-title">The Art of Optimization</h2>
             <div class="drum-visualization">
-                <canvas id="drumCanvas" width="600" height="600"></canvas>
+                <canvas id="drumCanvas" width="600" height="600" aria-label="Drum memory visualization showing optimized instruction placement on a rotating drum"></canvas>
                 <div class="drum-controls">
                     <button id="animateDrum" class="action-btn">Animate Drum Optimization</button>
                 </div>
@@ -151,7 +152,7 @@
                         <button id="standBtn" class="game-btn">Stand</button>
                         <button id="newGameBtn" class="game-btn primary">New Game</button>
                     </div>
-                    <div id="gameMessage" class="game-message"></div>
+                    <div id="gameMessage" class="game-message" aria-live="polite" aria-atomic="true"></div>
                 </div>
                 <div class="story-note">
                     <p>The sales department wanted Mel to let customers win by setting a sense switch.</p>

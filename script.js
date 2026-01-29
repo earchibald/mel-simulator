@@ -45,6 +45,8 @@ function initNavigation() {
 // Hex Rain Animation
 function createHexRain() {
     const hexRain = document.querySelector('.hex-rain');
+    if (!hexRain) return; // Exit if element doesn't exist
+    
     const hexChars = '0123456789ABCDEF';
     const numColumns = 20;
     
@@ -82,8 +84,11 @@ function createHexRain() {
 // Drum Visualization
 function initDrumVisualization() {
     const canvas = document.getElementById('drumCanvas');
+    if (!canvas) return; // Exit if canvas doesn't exist
+    
     const ctx = canvas.getContext('2d');
     const animateBtn = document.getElementById('animateDrum');
+    if (!animateBtn) return;
     
     let animating = false;
     let rotation = 0;
@@ -134,8 +139,8 @@ function initDrumVisualization() {
             const y = centerY + Math.sin(angle) * radius;
             
             // Check if instruction is near read head
-            const isNearHead = Math.abs(angle % (Math.PI * 2)) < 0.2 || 
-                              Math.abs(angle % (Math.PI * 2)) > Math.PI * 2 - 0.2;
+            const normalizedAngle = angle % (Math.PI * 2);
+            const isNearHead = normalizedAngle < 0.2 || normalizedAngle > (Math.PI * 2 - 0.2);
             instr.active = isNearHead;
             
             // Draw instruction point
@@ -199,6 +204,11 @@ function initBlackjack() {
     const hitBtn = document.getElementById('hitBtn');
     const standBtn = document.getElementById('standBtn');
     const newGameBtn = document.getElementById('newGameBtn');
+    
+    // Check if all required elements exist
+    if (!senseSwitch || !switchStatus || !hitBtn || !standBtn || !newGameBtn) {
+        return; // Exit if blackjack elements don't exist
+    }
     
     senseSwitch.addEventListener('change', (e) => {
         gameState.senseSwitch = e.target.checked;
@@ -320,32 +330,36 @@ function playerHit() {
 function playerStand() {
     if (gameState.gameOver) return;
     
-    // Dealer's turn
     gameState.gameOver = true;
     
-    // If sense switch is ON (Mel's bug), dealer cheats
-    if (gameState.senseSwitch) {
-        // Dealer draws until they beat player or bust
-        while (calculateScore(gameState.dealerHand) < 21 && 
-               calculateScore(gameState.dealerHand) <= calculateScore(gameState.playerHand)) {
-            setTimeout(() => {
+    // Dealer's turn - deal cards sequentially
+    const dealDealerCard = () => {
+        const dealerScore = calculateScore(gameState.dealerHand);
+        const playerScore = calculateScore(gameState.playerHand);
+        
+        // If sense switch is ON (Mel's bug), dealer cheats
+        if (gameState.senseSwitch) {
+            // Dealer draws until they beat player or bust
+            if (dealerScore < 21 && dealerScore <= playerScore) {
                 dealCard(gameState.dealerHand, 'dealerCards');
                 updateScores();
-            }, 500);
-        }
-    } else {
-        // Normal dealer logic
-        while (calculateScore(gameState.dealerHand) < 17) {
-            setTimeout(() => {
+                setTimeout(dealDealerCard, 500);
+            } else {
+                setTimeout(endGame, 500);
+            }
+        } else {
+            // Normal dealer logic - hit until 17
+            if (dealerScore < 17) {
                 dealCard(gameState.dealerHand, 'dealerCards');
                 updateScores();
-            }, 500);
+                setTimeout(dealDealerCard, 500);
+            } else {
+                setTimeout(endGame, 500);
+            }
         }
-    }
+    };
     
-    setTimeout(() => {
-        endGame();
-    }, 1000);
+    dealDealerCard();
 }
 
 function endGame() {
@@ -411,17 +425,31 @@ function animateOnScroll() {
 }
 
 // Easter eggs and interactivity
+let keySequence = []; // Persist key sequence across keypresses
+let sequenceTimer = null;
+
 document.addEventListener('keydown', (e) => {
-    // Konami code easter egg: up, up, down, down, left, right, left, right, b, a
-    // For simplicity, pressing 'M' 'E' 'L' in sequence
-    const keys = [];
-    if (e.key.toLowerCase() === 'm') keys.push('m');
-    if (e.key.toLowerCase() === 'e' && keys[keys.length - 1] === 'm') keys.push('e');
-    if (e.key.toLowerCase() === 'l' && keys[keys.length - 1] === 'e') {
+    // Clear old sequence after 2 seconds of inactivity
+    clearTimeout(sequenceTimer);
+    sequenceTimer = setTimeout(() => {
+        keySequence = [];
+    }, 2000);
+    
+    // Add key to sequence
+    keySequence.push(e.key.toLowerCase());
+    
+    // Keep only last 3 keys
+    if (keySequence.length > 3) {
+        keySequence.shift();
+    }
+    
+    // Check for M-E-L sequence
+    if (keySequence.join('') === 'mel') {
         // Trigger special effect
         document.body.style.animation = 'rainbow 2s linear';
         setTimeout(() => {
             document.body.style.animation = '';
+            keySequence = [];
         }, 2000);
     }
 });
