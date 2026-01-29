@@ -435,3 +435,51 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Add click ripple effect to buttons
+document.addEventListener('click', (e) => {
+    if (e.target.matches('button')) {
+        const ripple = document.createElement('span');
+        const rect = e.target.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple-effect');
+        
+        e.target.appendChild(ripple);
+        
+        setTimeout(() => ripple.remove(), 600);
+    }
+});
+
+// Add pulsing effect to hex bytes when they appear on screen
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.animation = `hex-glow 2s infinite`;
+            }, index * 100);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.hex-byte').forEach(el => observer.observe(el));
+
+// Performance optimization: pause animations when not visible
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        // Pause animations when tab is not visible
+        document.querySelectorAll('.drum-memory, .light').forEach(el => {
+            el.style.animationPlayState = 'paused';
+        });
+    } else {
+        // Resume animations
+        document.querySelectorAll('.drum-memory, .light').forEach(el => {
+            el.style.animationPlayState = 'running';
+        });
+    }
+});
