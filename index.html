@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An immersive, interactive web experience bringing to life the legendary tale of Mel Kaye, a Real Programmer who wrote machine code in raw hexadecimal on drum memory computers in the 1960s.">
+    <meta name="description" content="The complete original story of Mel - a Real Programmer who wrote machine code in raw hexadecimal on drum memory computers in the 1960s.">
     <title>The Story of Mel - A Real Programmer</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,246 +17,334 @@
             <div class="read-head"></div>
         </div>
         <h1 class="glitch" data-text="THE STORY OF MEL">THE STORY OF MEL</h1>
-        <p class="subtitle">A Tale of a Real Programmer</p>
+        <p class="subtitle">A Real Programmer</p>
+        <p class="byline">by Ed Nather</p>
         <div class="hex-rain"></div>
     </section>
 
-    <!-- Story Navigation -->
-    <nav class="story-nav">
-        <button class="nav-btn active" data-section="intro">The Beginning</button>
-        <button class="nav-btn" data-section="mel">Meet Mel</button>
-        <button class="nav-btn" data-section="optimization">Optimization Genius</button>
-        <button class="nav-btn" data-section="blackjack">The Blackjack Program</button>
-        <button class="nav-btn" data-section="mystery">The Mystery Loop</button>
-        <button class="nav-btn" data-section="legacy">The Legacy</button>
-    </nav>
+    <!-- Main Story Content -->
+    <main class="story-container">
+        <div class="story-content">
+            <div class="story-visual">
+                <div class="punch-card-animation"></div>
+            </div>
 
-    <!-- Intro Section -->
-    <section id="intro" class="story-section active">
-        <div class="container">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <span class="terminal-dot red"></span>
-                    <span class="terminal-dot yellow"></span>
-                    <span class="terminal-dot green"></span>
-                    <span class="terminal-title">REAL_PROGRAMMERS.TXT</span>
-                </div>
-                <div class="terminal-body">
-                    <p class="typewriter">Real Programmers write in FORTRAN.</p>
-                    <p class="typewriter delay-1">Maybe they do now, in this decadent era...</p>
-                    <p class="typewriter delay-2">But back in the Good Old Days,</p>
-                    <p class="typewriter delay-3">Real Programmers wrote in <span class="highlight">machine code</span>.</p>
-                    <p class="typewriter delay-4">Raw, unadorned, inscrutable <span class="highlight-green">hexadecimal</span> numbers.</p>
-                    <p class="typewriter delay-5"><span class="highlight-red">Directly.</span></p>
-                </div>
+            <div class="story-text-block">
+                <p>A recent article devoted to the macho side of programming</p>
+                <p>made the bald and unvarnished statement:</p>
+            </div>
+
+            <div class="story-text-block indented">
+                <p>Real Programmers write in FORTRAN.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>Maybe they do now,</p>
+                <p>in this decadent era of</p>
+                <p>Lite beer, hand calculators, and "user-friendly" software</p>
+                <p>but back in the Good Old Days,</p>
+                <p>when the term "software" sounded funny</p>
+                <p>and Real Computers were made out of drums and vacuum tubes,</p>
+                <p>Real Programmers wrote in machine code.</p>
+                <p>Not FORTRAN.  Not RATFOR.  Not, even, assembly language.</p>
+                <p>Machine Code.</p>
+                <p>Raw, unadorned, inscrutable hexadecimal numbers.</p>
+                <p>Directly.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>Lest a whole new generation of programmers</p>
+                <p>grow up in ignorance of this glorious past,</p>
+                <p>I feel duty-bound to describe,</p>
+                <p>as best I can through the generation gap,</p>
+                <p>how a Real Programmer wrote code.</p>
+                <p>I'll call him Mel,</p>
+                <p>because that was his name.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>I first met Mel when I went to work for Royal McBee Computer Corp.,</p>
+                <p>a now-defunct subsidiary of the typewriter company.</p>
+                <p>The firm manufactured the LGP-30,</p>
+                <p>a small, cheap (by the standards of the day)</p>
+                <p>drum-memory computer,</p>
+                <p>and had just started to manufacture</p>
+                <p>the RPC-4000, a much-improved,</p>
+                <p>bigger, better, faster — drum-memory computer.</p>
+                <p>Cores cost too much,</p>
+                <p>and weren't here to stay, anyway.</p>
+                <p>(That's why you haven't heard of the company,</p>
+                <p>or the computer.)</p>
+            </div>
+
+            <div class="story-visual">
+                <svg class="computer-diagram" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Drum Memory -->
+                    <circle cx="200" cy="150" r="80" fill="none" stroke="#00ff9f" stroke-width="3"/>
+                    <circle cx="200" cy="150" r="60" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.7"/>
+                    <circle cx="200" cy="150" r="40" fill="none" stroke="#ffd23f" stroke-width="2" opacity="0.5"/>
+                    
+                    <!-- Rotation indicator -->
+                    <line x1="200" y1="70" x2="200" y2="150" stroke="#ffd23f" stroke-width="3"/>
+                    <circle cx="200" cy="70" r="5" fill="#ffd23f"/>
+                    
+                    <!-- Label -->
+                    <text x="200" y="170" text-anchor="middle" font-size="16" fill="#00ff9f" font-family="monospace">DRUM MEMORY</text>
+                </svg>
+            </div>
+
+            <div class="story-text-block">
+                <p>I had been hired to write a FORTRAN compiler</p>
+                <p>for this new marvel and Mel was my guide to its wonders.</p>
+                <p>Mel didn't approve of compilers.</p>
+            </div>
+
+            <div class="story-text-block quote-block">
+                <p>"If a program can't rewrite its own code",</p>
+                <p>he asked, "what good is it?"</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>Mel had written,</p>
+                <p>in hexadecimal,</p>
+                <p>the most popular computer program the company owned.</p>
+                <p>It ran on the LGP-30</p>
+                <p>and played blackjack with potential customers</p>
+                <p>at computer shows.</p>
+                <p>Its effect was always dramatic.</p>
+                <p>The LGP-30 booth was packed at every show,</p>
+                <p>and the IBM salesmen stood around</p>
+                <p>talking to each other.</p>
+                <p>Whether or not this actually sold computers</p>
+                <p>was a question we never discussed.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>Mel's job was to re-write</p>
+                <p>the blackjack program for the RPC-4000.</p>
+                <p>(Port?  What does that mean?)</p>
+                <p>The new computer had a one-plus-one</p>
+                <p>addressing scheme,</p>
+                <p>in which each machine instruction,</p>
+                <p>in addition to the operation code</p>
+                <p>and the address of the needed operand,</p>
+                <p>had a second address that indicated where, on the revolving drum,</p>
+                <p>the next instruction was located.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>In modern parlance,</p>
+                <p>every single instruction was followed by a GO TO!</p>
+                <p>Put that in Pascal's pipe and smoke it.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>Mel loved the RPC-4000</p>
+                <p>because he could optimize his code:</p>
+                <p>that is, locate instructions on the drum</p>
+                <p>so that just as one finished its job,</p>
+                <p>the next would be just arriving at the "read head"</p>
+                <p>and available for immediate execution.</p>
+                <p>There was a program to do that job,</p>
+                <p>an "optimizing assembler",</p>
+                <p>but Mel refused to use it.</p>
+            </div>
+
+            <div class="story-text-block quote-block">
+                <p>"You never know where it's going to put things",</p>
+                <p>he explained, "so you'd have to use separate constants".</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>It was a long time before I understood that remark.</p>
+                <p>Since Mel knew the numerical value</p>
+                <p>of every operation code,</p>
+                <p>and assigned his own drum addresses,</p>
+                <p>every instruction he wrote could also be considered</p>
+                <p>a numerical constant.</p>
+                <p>He could pick up an earlier "add" instruction, say,</p>
+                <p>and multiply by it,</p>
+                <p>if it had the right numeric value.</p>
+                <p>His code was not easy for someone else to modify.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>I compared Mel's hand-optimized programs</p>
+                <p>with the same code massaged by the optimizing assembler program,</p>
+                <p>and Mel's always ran faster.</p>
+                <p>That was because the "top-down" method of program design</p>
+                <p>hadn't been invented yet,</p>
+                <p>and Mel wouldn't have used it anyway.</p>
+                <p>He wrote the innermost parts of his program loops first,</p>
+                <p>so they would get first choice</p>
+                <p>of the optimum address locations on the drum.</p>
+                <p>The optimizing assembler wasn't smart enough to do it that way.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>Mel never wrote time-delay loops, either,</p>
+                <p>even when the balky Flexowriter</p>
+                <p>required a delay between output characters to work right.</p>
+                <p>He just located instructions on the drum</p>
+                <p>so each successive one was just past the read head</p>
+                <p>when it was needed;</p>
+                <p>the drum had to execute another complete revolution</p>
+                <p>to find the next instruction.</p>
+                <p>He coined an unforgettable term for this procedure.</p>
+                <p>Although "optimum" is an absolute term,</p>
+                <p>like "unique", it became common verbal practice</p>
+                <p>to make it relative:</p>
+                <p>"not quite optimum" or "less optimum"</p>
+                <p>or "not very optimum".</p>
+                <p>Mel called the maximum time-delay locations</p>
+                <p>the "most pessimum".</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>After he finished the blackjack program</p>
+                <p>and got it to run</p>
+                <p>("Even the initializer is optimized",</p>
+                <p>he said proudly),</p>
+                <p>he got a Change Request from the sales department.</p>
+                <p>The program used an elegant (optimized)</p>
+                <p>random number generator</p>
+                <p>to shuffle the "cards" and deal from the "deck",</p>
+                <p>and some of the salesmen felt it was too fair,</p>
+                <p>since sometimes the customers lost.</p>
+                <p>They wanted Mel to modify the program</p>
+                <p>so, at the setting of a sense switch on the console,</p>
+                <p>they could change the odds and let the customer win.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>Mel balked.</p>
+                <p>He felt this was patently dishonest,</p>
+                <p>which it was,</p>
+                <p>and that it impinged on his personal integrity as a programmer,</p>
+                <p>which it did,</p>
+                <p>so he refused to do it.</p>
+                <p>The Head Salesman talked to Mel,</p>
+                <p>as did the Big Boss and, at the boss's urging,</p>
+                <p>a few Fellow Programmers.</p>
+                <p>Mel finally gave in and wrote the code,</p>
+                <p>but he got the test backwards,</p>
+                <p>and, when the sense switch was turned on,</p>
+                <p>the program would cheat, winning every time.</p>
+                <p>Mel was delighted with this,</p>
+                <p>claiming his subconscious was uncontrollably ethical,</p>
+                <p>and adamantly refused to fix it.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>After Mel had left the company for greener pa$ture$,</p>
+                <p>the Big Boss asked me to look at the code</p>
+                <p>and see if I could find the test and reverse it.</p>
+                <p>Somewhat reluctantly, I agreed to look.</p>
+                <p>Tracking Mel's code was a real adventure.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>I have often felt that programming is an art form,</p>
+                <p>whose real value can only be appreciated</p>
+                <p>by another versed in the same arcane art;</p>
+                <p>there are lovely gems and brilliant coups</p>
+                <p>hidden from human view and admiration, sometimes forever,</p>
+                <p>by the very nature of the process.</p>
+                <p>You can learn a lot about an individual</p>
+                <p>just by reading through his code,</p>
+                <p>even in hexadecimal.</p>
+                <p>Mel was, I think, an unsung genius.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>Perhaps my greatest shock came</p>
+                <p>when I found an innocent loop that had no test in it.</p>
+                <p>No test.  None.</p>
+                <p>Common sense said it had to be a closed loop,</p>
+                <p>where the program would circle, forever, endlessly.</p>
+                <p>Program control passed right through it, however,</p>
+                <p>and safely out the other side.</p>
+                <p>It took me two weeks to figure it out.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>The RPC-4000 computer had a really modern facility</p>
+                <p>called an index register.</p>
+                <p>It allowed the programmer to write a program loop</p>
+                <p>that used an indexed instruction inside;</p>
+                <p>each time through,</p>
+                <p>the number in the index register</p>
+                <p>was added to the address of that instruction,</p>
+                <p>so it would refer</p>
+                <p>to the next datum in a series.</p>
+                <p>He had only to increment the index register</p>
+                <p>each time through.</p>
+                <p>Mel never used it.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>Instead, he would pull the instruction into a machine register,</p>
+                <p>add one to its address,</p>
+                <p>and store it back.</p>
+                <p>He would then execute the modified instruction</p>
+                <p>right from the register.</p>
+                <p>The loop was written so this additional execution time</p>
+                <p>was taken into account —</p>
+                <p>just as this instruction finished,</p>
+                <p>the next one was right under the drum's read head,</p>
+                <p>ready to go.</p>
+                <p>But the loop had no test in it.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>The vital clue came when I noticed</p>
+                <p>the index register bit,</p>
+                <p>the bit that lay between the address</p>
+                <p>and the operation code in the instruction word,</p>
+                <p>was turned on —</p>
+                <p>yet Mel never used the index register,</p>
+                <p>leaving it zero all the time.</p>
+                <p>When the light went on it nearly blinded me.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>He had located the data he was working on</p>
+                <p>near the top of memory —</p>
+                <p>the largest locations the instructions could address —</p>
+                <p>so, after the last datum was handled,</p>
+                <p>incrementing the instruction address</p>
+                <p>would make it overflow.</p>
+                <p>The carry would add one to the</p>
+                <p>operation code, changing it to the next one in the instruction set:</p>
+                <p>a jump instruction.</p>
+                <p>Sure enough, the next program instruction was</p>
+                <p>in address location zero,</p>
+                <p>and the program went happily on its way.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>I haven't kept in touch with Mel,</p>
+                <p>so I don't know if he ever gave in to the flood of</p>
+                <p>change that has washed over programming techniques</p>
+                <p>since those long-gone days.</p>
+                <p>I like to think he didn't.</p>
+                <p>In any event,</p>
+                <p>I was impressed enough that I quit looking for the</p>
+                <p>offending test,</p>
+                <p>telling the Big Boss I couldn't find it.</p>
+                <p>He didn't seem surprised.</p>
+            </div>
+
+            <div class="story-text-block">
+                <p>When I left the company,</p>
+                <p>the blackjack program would still cheat</p>
+                <p>if you turned on the right sense switch,</p>
+                <p>and I think that's how it should be.</p>
+                <p>I didn't feel comfortable</p>
+                <p>hacking up the code of a Real Programmer.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Mel Section -->
-    <section id="mel" class="story-section">
-        <div class="container">
-            <h2 class="section-title">Meet Mel</h2>
-            <div class="computer-display">
-                <div class="lgp30-computer">
-                    <div class="computer-panel">
-                        <div class="lights">
-                            <div class="light"></div>
-                            <div class="light"></div>
-                            <div class="light"></div>
-                            <div class="light"></div>
-                            <div class="light"></div>
-                        </div>
-                        <div class="switches">
-                            <div class="switch"></div>
-                            <div class="switch"></div>
-                            <div class="switch"></div>
-                        </div>
-                    </div>
-                    <div class="computer-label">LGP-30</div>
-                </div>
-                <div class="story-text">
-                    <p>I first met Mel when I went to work for <span class="company">Royal McBee Computer Corp.</span></p>
-                    <p>Mel had written, in <span class="highlight-green">hexadecimal</span>, the most popular program the company owned.</p>
-                    <p>It ran on the LGP-30 and played <span class="highlight">blackjack</span> with potential customers at computer shows.</p>
-                    <blockquote>
-                        "If a program can't rewrite its own code, what good is it?"
-                        <footer>— Mel</footer>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Optimization Section -->
-    <section id="optimization" class="story-section">
-        <div class="container">
-            <h2 class="section-title">The Art of Optimization</h2>
-            <div class="drum-visualization">
-                <canvas id="drumCanvas" width="600" height="600" aria-label="Drum memory visualization showing optimized instruction placement on a rotating drum"></canvas>
-                <div class="drum-controls">
-                    <button id="animateDrum" class="action-btn">Animate Drum Optimization</button>
-                </div>
-            </div>
-            <div class="story-text">
-                <p>The RPC-4000 had a <span class="highlight">one-plus-one addressing scheme</span>.</p>
-                <p>Every instruction included where the <span class="highlight-green">next instruction</span> was located on the drum.</p>
-                <p class="emphasis">In modern parlance, every single instruction was followed by a GO TO!</p>
-                <p>Mel could optimize by locating instructions so they'd arrive at the read head exactly when needed.</p>
-                <div class="code-example">
-                    <div class="code-label">Mel's Hand-Optimized Code:</div>
-                    <div class="hex-display">
-                        <span class="hex-byte">3F</span>
-                        <span class="hex-byte">A2</span>
-                        <span class="hex-byte">7C</span>
-                        <span class="hex-byte">15</span>
-                        <span class="hex-byte">8B</span>
-                        <span class="hex-byte">D4</span>
-                        <span class="hex-byte">29</span>
-                        <span class="hex-byte">6E</span>
-                    </div>
-                    <div class="code-note">Each instruction is also a constant that can be used in calculations!</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blackjack Section -->
-    <section id="blackjack" class="story-section">
-        <div class="container">
-            <h2 class="section-title">The Blackjack Program</h2>
-            <div class="blackjack-game">
-                <div class="sense-switch-panel">
-                    <label class="switch-label">
-                        <span>SENSE SWITCH</span>
-                        <input type="checkbox" id="senseSwitch">
-                        <span class="switch-slider"></span>
-                    </label>
-                    <div class="switch-status">
-                        <span id="switchStatus">OFF - Fair Play</span>
-                    </div>
-                </div>
-                <div class="game-area">
-                    <div class="dealer-area">
-                        <h3>Dealer</h3>
-                        <div id="dealerCards" class="card-container"></div>
-                        <div id="dealerScore" class="score"></div>
-                    </div>
-                    <div class="player-area">
-                        <h3>You</h3>
-                        <div id="playerCards" class="card-container"></div>
-                        <div id="playerScore" class="score"></div>
-                    </div>
-                    <div class="game-controls">
-                        <button id="hitBtn" class="game-btn">Hit</button>
-                        <button id="standBtn" class="game-btn">Stand</button>
-                        <button id="newGameBtn" class="game-btn primary">New Game</button>
-                    </div>
-                    <div id="gameMessage" class="game-message" aria-live="polite" aria-atomic="true"></div>
-                </div>
-                <div class="story-note">
-                    <p>The sales department wanted Mel to let customers win by setting a sense switch.</p>
-                    <p class="emphasis">Mel wrote the code, but got the test backwards...</p>
-                    <p>When the sense switch is ON, the program cheats — <span class="highlight-red">winning every time</span>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mystery Loop Section -->
-    <section id="mystery" class="story-section">
-        <div class="container">
-            <h2 class="section-title">The Mystery Loop</h2>
-            <div class="loop-visualization">
-                <div class="story-text">
-                    <p>I found an innocent loop that had <span class="highlight-red">no test in it</span>.</p>
-                    <p>Common sense said it had to be a closed loop, circling forever, endlessly.</p>
-                    <p>But program control passed right through it, and safely out the other side.</p>
-                    <p class="emphasis">It took me two weeks to figure it out.</p>
-                </div>
-                <div class="memory-diagram">
-                    <div class="memory-grid">
-                        <div class="memory-row header">
-                            <span>Address</span>
-                            <span>Instruction</span>
-                            <span>Operation</span>
-                        </div>
-                        <div class="memory-row" data-addr="0xFFFE">
-                            <span class="addr">0xFFFE</span>
-                            <span class="instr">ADD [0xFFFE]</span>
-                            <span class="op">Process data</span>
-                        </div>
-                        <div class="memory-row" data-addr="0xFFFF">
-                            <span class="addr">0xFFFF</span>
-                            <span class="instr">ADD [0xFFFF]</span>
-                            <span class="op">Last datum</span>
-                        </div>
-                        <div class="memory-row overflow">
-                            <span class="addr">0x10000</span>
-                            <span class="instr highlight-red">OVERFLOW!</span>
-                            <span class="op">Becomes JMP!</span>
-                        </div>
-                        <div class="memory-row" data-addr="0x0000">
-                            <span class="addr">0x0000</span>
-                            <span class="instr highlight-green">Next instruction</span>
-                            <span class="op">Continue...</span>
-                        </div>
-                    </div>
-                    <div class="revelation">
-                        <p>The data was near the top of memory. After the last datum, incrementing the address would overflow!</p>
-                        <p class="emphasis">The carry would change the operation code to a JUMP instruction.</p>
-                        <p class="highlight-green">Pure genius.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Legacy Section -->
-    <section id="legacy" class="story-section">
-        <div class="container">
-            <h2 class="section-title">The Legacy</h2>
-            <div class="legacy-content">
-                <blockquote class="final-quote">
-                    <p>"I have often felt that programming is an art form,</p>
-                    <p>whose real value can only be appreciated</p>
-                    <p>by another versed in the same arcane art;</p>
-                    <p>there are lovely gems and brilliant coups</p>
-                    <p>hidden from human view and admiration, sometimes forever,</p>
-                    <p>by the very nature of the process."</p>
-                </blockquote>
-                <div class="tribute">
-                    <p>Mel was, I think, an unsung genius.</p>
-                    <p>When I left the company, the blackjack program would still cheat if you turned on the right sense switch.</p>
-                    <p class="emphasis">And I think that's how it should be.</p>
-                    <p>I didn't feel comfortable hacking up the code of a Real Programmer.</p>
-                </div>
-                <div class="tech-specs">
-                    <h3>The Machines</h3>
-                    <div class="spec-grid">
-                        <div class="spec-card">
-                            <h4>LGP-30</h4>
-                            <ul>
-                                <li>Drum memory computer</li>
-                                <li>Vacuum tube technology</li>
-                                <li>4096 words of memory</li>
-                                <li>Hand-coded in hex</li>
-                            </ul>
-                        </div>
-                        <div class="spec-card">
-                            <h4>RPC-4000</h4>
-                            <ul>
-                                <li>One-plus-one addressing</li>
-                                <li>Every instruction has GO TO</li>
-                                <li>Drum optimization critical</li>
-                                <li>Index register (unused by Mel)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">

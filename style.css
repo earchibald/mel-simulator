@@ -206,6 +206,14 @@ body {
     z-index: 2;
 }
 
+.byline {
+    font-size: 1rem;
+    color: var(--text-dim);
+    text-align: center;
+    z-index: 2;
+    margin-top: 0.5rem;
+}
+
 /* Hex Rain Effect */
 .hex-rain {
     position: absolute;
@@ -217,60 +225,56 @@ body {
     overflow: hidden;
 }
 
-/* Story Navigation */
-.story-nav {
-    position: sticky;
-    top: 0;
-    background: rgba(10, 14, 39, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    z-index: 100;
-    border-bottom: 2px solid var(--primary);
-    box-shadow: 0 4px 20px rgba(0, 255, 159, 0.2);
+/* Story Container - Main Scrolling Page */
+.story-container {
+    background: var(--bg-dark);
+    position: relative;
+    z-index: 2;
 }
 
-.nav-btn {
-    padding: 0.5rem 1rem;
-    background: transparent;
-    color: var(--text-dim);
-    border: 2px solid var(--text-dim);
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-}
-
-.nav-btn:hover,
-.nav-btn.active {
-    background: var(--primary);
-    color: var(--bg-dark);
-    border-color: var(--primary);
-    box-shadow: 0 0 15px var(--primary);
-    transform: translateY(-2px);
-}
-
-/* Container */
-.container {
-    max-width: 1200px;
+.story-content {
+    max-width: 900px;
     margin: 0 auto;
     padding: 4rem 2rem;
 }
 
-/* Story Sections */
-.story-section {
-    display: none;
-    min-height: 100vh;
-    background: var(--bg-dark);
-    position: relative;
+/* Story Text Blocks */
+.story-text-block {
+    margin: 2rem 0;
+    line-height: 1.9;
+    font-size: 1.1rem;
 }
 
-.story-section.active {
-    display: block;
+.story-text-block p {
+    margin: 0.8rem 0;
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+.story-text-block:hover p {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 255, 159, 0.3);
+}
+
+.story-text-block.indented {
+    margin-left: 3rem;
+    padding-left: 2rem;
+    border-left: 3px solid var(--accent);
+    color: var(--accent);
+}
+
+.quote-block {
+    background: rgba(255, 107, 53, 0.1);
+    border-left: 4px solid var(--secondary);
+    padding: 1.5rem;
+    padding-left: 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+    border-radius: 5px;
+}
+
+.quote-block p {
+    color: var(--text-dim);
 }
 
 .section-title {
