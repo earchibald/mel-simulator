@@ -24,3 +24,4 @@ temp/
 # Ignore build artifacts (if any are added in the future)
 dist/
 build/
+.playwright-mcp/

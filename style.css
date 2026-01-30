@@ -782,6 +782,35 @@ input[type="checkbox"]:checked + .switch-slider::before {
     margin: 3rem 0;
 }
 
+/* Drum Animation Container */
+.drum-animation-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem auto;
+    max-width: 500px;
+}
+
+#drum-animation-canvas {
+    display: block;
+    margin: 0 auto;
+    background: rgba(10, 14, 39, 0.5);
+    border-radius: 10px;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 30px rgba(0, 255, 159, 0.2);
+}
+
+.drum-animation-label {
+    font-size: 1.3rem;
+    color: var(--primary);
+    text-shadow: 0 0 15px var(--primary);
+    margin-top: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
 .memory-grid {
     background: #1e1e1e;
     border: 2px solid var(--primary);
