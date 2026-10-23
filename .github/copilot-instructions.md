@@ -1,0 +1,2 @@
+# Primary Instructions
+- NEVER try to write outside the workspace unless directly instructed to. EXCEPT: If temporary files are required, use `mktemp` to create temporary files, or `mkptemp -d` to create temporary directories.
